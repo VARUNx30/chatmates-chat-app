@@ -29,7 +29,7 @@ const Profile = () => {
     reader.readAsDataURL(file);
 
     reader.onload = async () => {
-      const base64Image = String(reader.result || "").trim().replace(/\s+/g, "");
+      const base64Image = reader.result;
       setSelectedImg(base64Image);
       await updateProfile({ profilePic: base64Image });
     };
